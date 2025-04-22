@@ -9,7 +9,7 @@ const name = 'Hello World'
     <MainButton />
     <p>{{ name }}</p>
     <OptionsComponent></OptionsComponent>
-    <CompositionComponent></CompositionComponent>
+    <composition-component></composition-component>
 </template>
 
 <style scoped></style>
