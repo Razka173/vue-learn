@@ -1,9 +1,12 @@
 <script setup>
-const buttonDisabled = true
+const buttonAttr = {
+    disabled: true,
+    class: 'text-3xl bg-black text-white',
+}
 </script>
 
 <template>
-    <button :disabled="buttonDisabled">Razka Agniatara</button>
+    <button v-bind="buttonAttr">Razka Agniatara</button>
 </template>
 
 <style scoped></style>
