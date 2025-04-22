@@ -1,7 +1,9 @@
-<script setup></script>
+<script setup>
+const buttonDisabled = true
+</script>
 
 <template>
-    <button>Razka Agniatara</button>
+    <button :disabled="buttonDisabled">Razka Agniatara</button>
 </template>
 
 <style scoped></style>
