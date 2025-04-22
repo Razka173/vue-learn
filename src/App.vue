@@ -2,7 +2,7 @@
 import MainButton from './components/MainButton.vue'
 const greeting = 'Hello World'
 const blogPost = '<p style="color: red;">Ini adalah BlogPost</p>'
-const idBlog = 'blog-1'
+const blogClass = 'text-2xl flex flex-col'
 </script>
 
 <template>
@@ -13,7 +13,7 @@ const idBlog = 'blog-1'
     <OptionsComponent></OptionsComponent>
     <composition-component></composition-component>
 
-    <div v-bind:id="idBlog">
+    <div v-bind:id="idBlog" v-bind:class="blogClass">
         {{ blogPost }}
     </div>
     <div v-html="blogPost"></div>
