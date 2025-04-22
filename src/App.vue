@@ -1,15 +1,21 @@
 <script setup>
 import MainButton from './components/MainButton.vue'
-const name = 'Hello World'
+const greeting = 'Hello World'
+const blogPost = '<p style="color: red;">Ini adalah BlogPost</p>'
 </script>
 
 <template>
     <MainButton />
     <MainButton />
     <MainButton />
-    <p>{{ name }}</p>
+    <p>{{ greeting }}</p>
     <OptionsComponent></OptionsComponent>
     <composition-component></composition-component>
+
+    <div>
+        {{ blogPost }}
+    </div>
+    <div v-html="blogPost"></div>
 </template>
 
 <style scoped></style>
