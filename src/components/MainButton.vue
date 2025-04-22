@@ -7,7 +7,9 @@ const buttonAttr = {
 </script>
 
 <template>
-    <button v-bind="buttonAttr">{{ isLoading ? 'Loading' : 'Submit' }}</button>
+    <button v-bind="buttonAttr" :id="`id-${buttonAttr.class}`">
+        {{ isLoading ? 'Loading' : 'Submit' }}
+    </button>
 </template>
 
 <style scoped></style>
