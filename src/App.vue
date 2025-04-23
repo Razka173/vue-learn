@@ -1,40 +1,28 @@
 <script setup>
-import { reactive, ref } from 'vue'
-import MainButton from './components/MainButton.vue'
-const greeting = 'Hello World'
-const blogPost = '<p style="color: red;">Ini adalah BlogPost</p>'
-const id = '1'
-const blogClass = 'text-2xl flex flex-col'
-const submitButton = {
-    title: 'Submit',
-    disabled: true,
-}
-const count = ref(1)
+import { computed, reactive, ref } from 'vue'
+
+const author = reactive({
+    name: 'JK Rowling',
+    books: ['Harry Potter 1', 'Harry Potter 2'],
+})
+
+const count = ref(0)
 
 const increment = () => {
     count.value++
 }
 
-const user = reactive({ name: 'Razka', age: 27 })
+const isPublished = computed(() => {
+    console.log('test')
+    return author.books.length > 0 ? 'Published yes' : 'Publised no'
+})
 </script>
 
 <template>
-    <MainButton :title="`test`" disabled />
-    <MainButton v-bind="submitButton" />
-    <MainButton />
-    <p>{{ greeting }}</p>
-    <OptionsComponent></OptionsComponent>
-    <composition-component></composition-component>
-
-    <div :id :class="blogClass">
-        {{ blogPost }}
-    </div>
-    <div v-html="blogPost"></div>
-    <button @click="increment">{{ count }}</button>
     <div>
-        <h1>{{ user.name }}</h1>
-        <button @click="user.age++">{{ user.age }}</button>
+        {{ isPublished }}
     </div>
+    <button @click="increment">{{ count }}</button>
 </template>
 
 <style scoped></style>
