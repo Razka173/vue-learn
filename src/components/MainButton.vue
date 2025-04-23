@@ -1,6 +1,7 @@
 <script setup>
 const isLoading = false
 const buttonAttr = {
+    type: 'button',
     disabled: isLoading,
     class: 'text-3xl bg-black text-white',
 }
@@ -12,12 +13,16 @@ const renderIsLoading = () => {
         return 'Submit'
     }
 }
+
+const url = '/home'
 </script>
 
 <template>
-    <button v-bind="buttonAttr" :id="`id-${buttonAttr.class}`">
-        {{ renderIsLoading() }}
-    </button>
+    <a :href="url">
+        <button v-bind="buttonAttr" :id="`id-${buttonAttr.class}`">
+            {{ renderIsLoading() }}
+        </button>
+    </a>
 </template>
 
 <style scoped></style>
