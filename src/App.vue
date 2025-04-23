@@ -7,9 +7,9 @@ const blogClass = 'text-2xl flex flex-col'
 </script>
 
 <template>
-    <MainButton />
-    <MainButton />
-    <MainButton />
+    <MainButton :title="`button`" />
+    <MainButton :title="`submit`" />
+    <MainButton :title="`test`" />
     <p>{{ greeting }}</p>
     <OptionsComponent></OptionsComponent>
     <composition-component></composition-component>
