@@ -4,12 +4,16 @@ const greeting = 'Hello World'
 const blogPost = '<p style="color: red;">Ini adalah BlogPost</p>'
 const id = '1'
 const blogClass = 'text-2xl flex flex-col'
+const submitButton = {
+    title: 'Submit',
+    disabled: true,
+}
 </script>
 
 <template>
-    <MainButton :title="`button`" />
-    <MainButton :title="`submit`" />
-    <MainButton :title="`test`" />
+    <MainButton :title="`test`" disabled />
+    <MainButton v-bind="submitButton" />
+    <MainButton />
     <p>{{ greeting }}</p>
     <OptionsComponent></OptionsComponent>
     <composition-component></composition-component>

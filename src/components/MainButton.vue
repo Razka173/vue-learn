@@ -1,9 +1,18 @@
 <script setup>
-const props = defineProps(['title'])
+const { title, disabled } = defineProps({
+    title: {
+        type: String,
+        default: 'Title',
+    },
+    disabled: {
+        type: Boolean,
+        default: false,
+    },
+})
 </script>
 
 <template>
-    <button>{{ props.title }}</button>
+    <button :disabled>{{ title }}</button>
 </template>
 
 <style scoped></style>
