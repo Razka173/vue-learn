@@ -14,11 +14,14 @@ const renderIsLoading = () => {
     }
 }
 
-const url = '/home'
+const url = {
+    attr: 'href',
+    link: '/home',
+}
 </script>
 
 <template>
-    <a :href="url">
+    <a :[url.attr]="url.link">
         <button v-bind="buttonAttr" :id="`id-${buttonAttr.class}`">
             {{ renderIsLoading() }}
         </button>
