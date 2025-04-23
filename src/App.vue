@@ -1,4 +1,5 @@
 <script setup>
+import { reactive, ref } from 'vue'
 import MainButton from './components/MainButton.vue'
 const greeting = 'Hello World'
 const blogPost = '<p style="color: red;">Ini adalah BlogPost</p>'
@@ -8,6 +9,13 @@ const submitButton = {
     title: 'Submit',
     disabled: true,
 }
+const count = ref(1)
+
+const increment = () => {
+    count.value++
+}
+
+const user = reactive({ name: 'Razka', age: 27 })
 </script>
 
 <template>
@@ -22,6 +30,11 @@ const submitButton = {
         {{ blogPost }}
     </div>
     <div v-html="blogPost"></div>
+    <button @click="increment">{{ count }}</button>
+    <div>
+        <h1>{{ user.name }}</h1>
+        <button @click="user.age++">{{ user.age }}</button>
+    </div>
 </template>
 
 <style scoped></style>
