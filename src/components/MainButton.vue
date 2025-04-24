@@ -9,17 +9,19 @@ const { title, disabled } = defineProps({
         default: false,
     },
 })
+
+const disabledColor = "#000"
+const availableColor = "#fff"
 </script>
 
 <template>
-    <button :disabled class="button" :class="{disabled: disabled}">{{ title }}</button>
+    <button :disabled class="button" :class="{disabled: disabled}" :style="{color: disabled ? '#000' : '#fff'}">{{ title }}</button>
 </template>
 
 <style scoped>
 .button {
     background-color: salmon;
     border: none;
-    color: white;
     padding: 2px 4px;
 }
 
