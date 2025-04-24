@@ -12,7 +12,19 @@ const { title, disabled } = defineProps({
 </script>
 
 <template>
-    <button :disabled>{{ title }}</button>
+    <button :disabled class="button" :class="{disabled: disabled}">{{ title }}</button>
 </template>
 
-<style scoped></style>
+<style scoped>
+.button {
+    background-color: salmon;
+    border: none;
+    color: white;
+    padding: 2px 4px;
+}
+
+.disabled {
+    /* opacity: 0.5; */
+    background-color: grey;
+}
+</style>
